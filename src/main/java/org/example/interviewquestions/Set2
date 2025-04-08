@@ -1,0 +1,23 @@
+𝗠𝘆 𝗜𝗻𝘁𝗲𝗿𝘃𝗶𝗲𝘄 𝗘𝘅𝗽𝗲𝗿𝗶𝗲𝗻𝗰𝗲 – Core Java Questions
+Recently, I had an interview where I encountered some interesting Core Java questions. Sharing them here to help fellow developers prepare:
+
+1) Difference between ArrayList and LinkedList.
+2) How HashMap works internally in Java.
+3) What happens if two keys have the same hashcode in HashMap?
+4) Difference between String, StringBuilder, and StringBuffer.
+5) Why is String immutable in Java?
+6) How does Garbage Collection work in Java?
+7) Explain Java Memory Management (Heap vs. Stack)
+8) What are functional interfaces in Java?
+9) Difference between Comparator and Comparable.
+10) What is Java 8 Stream API, and how does it work?
+11) How does Concurrency work in Java?
+12) Explain the volatile keyword in Java.
+13) What is the use of the transient keyword?
+14) Difference between final, finally, and finalize.
+15 What are checked and unchecked exceptions?
+16) Can we override a static method in Java?
+17) What is the difference between deep copy and shallow copy?
+18) How does the synchronized keyword work?
+19) What is a ThreadPool, and why is it used?
+20) How do you handle deadlocks in Java?
