@@ -3,20 +3,138 @@
 3. What is stream api
 4. Intermediate vs terminal operations in streams and list the method names
 5. Why java introduced default and static methods in interfaces
+Default Methods: Introduced to allow adding new methods to interfaces without breaking the existing implementations. It helps in evolving APIs while maintaining backward compatibility.
+
+Static Methods: These allow you to define utility methods that are related to the interface but don't depend on instance-specific data.
+
 6. How to create an immutable class in java
+An immutable class cannot be modified once it is created. To make a class immutable:
+
+Declare the class as final so it cannot be subclassed.
+
+Make all fields private and final.
+
+Provide only getters (no setters).
+
+Initialize fields in the constructor and ensure the object cannot be modified after construction.
+public final class Person {
+    private final String name;
+    private final int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
 7. What is singleton class and in which scenario we will be using that
 8. Create singleton class
+A Singleton Class ensures that only one instance of the class is created during the lifetime of the application. It is useful when you want to control access to a shared resource, such as a configuration object or a database connection.
+public class Singleton {
+    private static Singleton instance;
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            synchronized (Singleton.class) {
+                if (instance == null) {
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+
 9. How hasmap internally works
+Internally, a HashMap works using a hash table, where keys are hashed into an index, and values are stored in buckets (linked lists or red-black trees). When a key-value pair is added, the key is hashed, and the value is placed into the corresponding bucket. If a key already exists, the value is updated.
+
 10. How many ways an object can be created
+Objects in Java can be created in several ways:
+
+Using the new keyword.
+
+Using a constructor (default or parameterized).
+
+Using clone() method for cloning.
+
+Using deserialization (converting byte streams into objects).
+
+Using reflection (Class.newInstance() or Constructor.newInstance()).
+
 11. How does the hashmap work when we have an Employee object as a key
+If you use an object (like Employee) as a key in a HashMap, the hashCode() and equals() methods in the Employee class need to be overridden to ensure that the map can properly hash and compare keys. If these methods are not overridden, the HashMap may not behave as expected.
+
 12. What are stereotype annotations in springboot
+Stereotype annotations are used in Spring to mark classes as special components. These annotations automatically register classes as Spring beans. Examples include:
+@Component
+@Service
+@Repository
+@Controller
+
 13. What is dependency injection
+Dependency Injection (DI) is a design pattern that allows the injection of dependencies (objects) into a class, rather than the class creating the objects itself. This helps in achieving loose coupling and makes the system easier to test and maintain.
+
 14. How many ways are there to achieve dependency injection and which one is best
+There are three common ways to achieve DI in Spring:
+
+Constructor Injection: Dependencies are provided through the constructor.
+
+Setter Injection: Dependencies are provided through setter methods.
+
+Field Injection: Dependencies are injected directly into fields.
+
+Constructor injection is generally considered the best practice as it ensures that dependencies are provided at object creation time and makes the class immutable.
+
 15. @primary vs @qualifier and which one will be given priority
+@Primary: Used to mark a bean as the default when multiple beans of the same type are available.
+
+@Qualifier: Used to specify which bean to inject when multiple candidates are available.
+
+Priority: If both @Primary and @Qualifier are used, @Qualifier will take precedence over @Primary
+
 16. How to create beans manually
+@Configuration
+public class AppConfig {
+
+    @Bean
+    public MyBean myBean() {
+        return new MyBean();
+    }
+}
+
 17. Explain about @SpringBootApplucation annotation
+The @SpringBootApplication annotation is a combination of:
+
+@Configuration
+
+@EnableAutoConfiguration
+
+@ComponentScan
+
 18. How to handle exception in springboot
+Spring Boot provides a global exception handling mechanism using @ControllerAdvice and @ExceptionHandler.
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleException(Exception ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+
 19. How to create global exceptions and what annotations u use
+Global exceptions in Spring Boot are handled by @ControllerAdvice and @ExceptionHandler. @ControllerAdvice is used to define global exception handlers for all controllers.
+
 20. @RestController vs @Controller
 21. What is pathvariable
 22. How to perform data validation in REST APIs
@@ -39,16 +157,32 @@
 39. Explain API gateway
 40. Explain the working procedure of circuit breaker
 41. Different types of bean scopes and which one is default
+Spring defines several bean scopes:
+
+Singleton (default): One instance per Spring container.
+
+Prototype: A new instance each time the bean is requested.
+
+Request: One instance per HTTP request.
+
+Session: One instance per HTTP session.
+
+GlobalSession: One instance per global HTTP session.
+
 42. Http codes u used in u r projects
 43. Explain factory design pattern
 44. Map vs flatmap
+Map: Transforms each element in the stream.
+
+FlatMap: Flattens a stream of collections into a single stream.
+
 45. String s1=new String("hello");
  String s2=new String("hello");
  String s3="hello";
  String s4="hello";
  String s5="Hello";
  What is the output for below code,
- System.out.println(s1==s2);
- System.out.println(s1==s3);
- System.out.println(s3==s4);
- System.out.println(s4==s5);
+System.out.println(s1 == s2);  // false (different objects)
+System.out.println(s1 == s3);  // false (different objects)
+System.out.println(s3 == s4);  // true (same object from string pool)
+System.out.println(s4 == s5);  // false (case difference)
