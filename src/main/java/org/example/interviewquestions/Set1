@@ -1,0 +1,54 @@
+1. Java 8 features
+2. What is lamda expression and write the code how to use lamda expression
+3. What is stream api
+4. Intermediate vs terminal operations in streams and list the method names
+5. Why java introduced default and static methods in interfaces
+6. How to create an immutable class in java
+7. What is singleton class and in which scenario we will be using that
+8. Create singleton class
+9. How hasmap internally works
+10. How many ways an object can be created
+11. How does the hashmap work when we have an Employee object as a key
+12. What are stereotype annotations in springboot
+13. What is dependency injection
+14. How many ways are there to achieve dependency injection and which one is best
+15. @primary vs @qualifier and which one will be given priority
+16. How to create beans manually
+17. Explain about @SpringBootApplucation annotation
+18. How to handle exception in springboot
+19. How to create global exceptions and what annotations u use
+20. @RestController vs @Controller
+21. What is pathvariable
+22. How to perform data validation in REST APIs
+23. How does angular applications interact with the backend API to fetch the data
+24. Explain how you clone the code from git and commit the changes
+25. How to resolve merge conflicts
+26. Tell me the git commands which u use on a daily basis
+27. How to write junit test cases for static methods in java
+28. What is the use of mockito framework
+29. What is meant by the Response entity
+30. How microservices communicate with each other
+31. What is the difference between asynchronous and synchronous communication
+32. How Rest template works
+33. How component scan works
+34. How to exclude few classes from component scan
+35. What is the default server in springboot
+36. What is the default port in springboot
+37. How to change the default server and use a specific server in springboot application
+38. What is the use of spring actuators
+39. Explain API gateway
+40. Explain the working procedure of circuit breaker
+41. Different types of bean scopes and which one is default
+42. Http codes u used in u r projects
+43. Explain factory design pattern
+44. Map vs flatmap
+45. String s1=new String("hello");
+ String s2=new String("hello");
+ String s3="hello";
+ String s4="hello";
+ String s5="Hello";
+ What is the output for below code,
+ System.out.println(s1==s2);
+ System.out.println(s1==s3);
+ System.out.println(s3==s4);
+ System.out.println(s4==s5);
