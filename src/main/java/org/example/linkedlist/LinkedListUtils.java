@@ -1,6 +1,6 @@
 package org.example.linkedlist;
 
-public class ConvertArrayToLL_PrintLL_LengthOfLL {
+public class LinkedListUtils {
 
     public static Node convertArrayToLL(int[] arr)
     {
@@ -39,12 +39,14 @@ public class ConvertArrayToLL_PrintLL_LengthOfLL {
         return length;
     }
 
-    public static void main(String[] args) {
-        int[] arr={1,2,3,4,5};
-        Node head = convertArrayToLL(arr);
-        System.out.println("Printing the LL:");
-        printLL(head);
-        int length = lengthLL(head);
-        System.out.println("Length of LL: "+length);
+    public static boolean searchElementLL(Node head, int searchElement) {
+        Node current = head;
+        while (current!=null)
+        {
+            if (current.data == searchElement)
+                return true;
+            current = current.next;
+        }
+        return false;
     }
 }
