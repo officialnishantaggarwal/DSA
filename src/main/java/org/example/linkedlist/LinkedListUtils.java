@@ -20,7 +20,6 @@ public class LinkedListUtils {
 
     public static Node removesHead(Node head) {
         if(head == null) return head;
-        Node temp = head;
         head = head.next;
         return head;
     }
