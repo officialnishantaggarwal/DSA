@@ -18,6 +18,13 @@ public class LinkedListUtils {
         return head;
     }
 
+    public static Node removesHead(Node head) {
+        if(head == null) return head;
+        Node temp = head;
+        head = head.next;
+        return head;
+    }
+
     public static void printLL(Node head){
         Node current = head;
         while (current!=null)
