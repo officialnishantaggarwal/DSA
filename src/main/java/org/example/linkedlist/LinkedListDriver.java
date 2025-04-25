@@ -12,8 +12,8 @@ public class LinkedListDriver {
         System.out.println("Length of LL: "+length);
         boolean elementFound = LinkedListUtils.searchElementLL(head,searchElement);
         System.out.println("Element Found "+searchElement+": "+elementFound);
-        Node removeHead = LinkedListUtils.removesHead(head);
+        head = LinkedListUtils.removesHead(head);
         System.out.println("Printing the LL after removing Head:");
-        LinkedListUtils.printLL(removeHead);
+        LinkedListUtils.printLL(head);
     }
 }
