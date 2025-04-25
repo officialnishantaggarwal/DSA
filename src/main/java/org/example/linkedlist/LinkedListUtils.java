@@ -24,6 +24,16 @@ public class LinkedListUtils {
         return head;
     }
 
+    public static Node removesTail(Node head) {
+        if(head == null || head.next==null) return null;
+        Node temp = head;
+        while (temp.next.next!=null) {
+            temp = temp.next;
+        }
+        temp.next = null;
+        return head;
+    }
+
     public static void printLL(Node head){
         Node current = head;
         while (current!=null)

@@ -15,5 +15,8 @@ public class LinkedListDriver {
         head = LinkedListUtils.removesHead(head);
         System.out.println("Printing the LL after removing Head:");
         LinkedListUtils.printLL(head);
+        head = LinkedListUtils.removesTail(head);
+        System.out.println("Printing the LL after removing tail:");
+        LinkedListUtils.printLL(head);
     }
 }
