@@ -23,9 +23,15 @@ public class LinkedListDriver {
 //        LinkedListUtils.printLL(head);
 
         // removes index
-        int removeIndex = 2;
-        head = LinkedListUtils.deleteKthElementOfLL(head,removeIndex);
-        System.out.println("Printing the LL after removing "+removeIndex+":");
+//        int removeIndex = 3;
+//        head = LinkedListUtils.deleteKthElementOfLL(head,removeIndex);
+//        System.out.println("Printing the LL after removing from position "+removeIndex+":");
+//        LinkedListUtils.printLL(head);
+
+        // remove Element
+        int removeElement = 3;
+        head = LinkedListUtils.deleteElementOfLL(head,removeElement);
+        System.out.println("Printing the LL after removing Element "+removeElement+":");
         LinkedListUtils.printLL(head);
 
     }
