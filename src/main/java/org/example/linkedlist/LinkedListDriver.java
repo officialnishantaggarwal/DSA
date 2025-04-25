@@ -12,11 +12,21 @@ public class LinkedListDriver {
         System.out.println("Length of LL: "+length);
         boolean elementFound = LinkedListUtils.searchElementLL(head,searchElement);
         System.out.println("Element Found "+searchElement+": "+elementFound);
-        head = LinkedListUtils.removesHead(head);
-        System.out.println("Printing the LL after removing Head:");
+        // removed head
+//        head = LinkedListUtils.removesHead(head);
+//        System.out.println("Printing the LL after removing Head:");
+//        LinkedListUtils.printLL(head);
+
+        // removes tail
+//        head = LinkedListUtils.removesTail(head);
+//        System.out.println("Printing the LL after removing tail:");
+//        LinkedListUtils.printLL(head);
+
+        // removes index
+        int removeIndex = 2;
+        head = LinkedListUtils.deleteKthElementOfLL(head,removeIndex);
+        System.out.println("Printing the LL after removing "+removeIndex+":");
         LinkedListUtils.printLL(head);
-        head = LinkedListUtils.removesTail(head);
-        System.out.println("Printing the LL after removing tail:");
-        LinkedListUtils.printLL(head);
+
     }
 }

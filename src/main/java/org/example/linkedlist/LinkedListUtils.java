@@ -34,6 +34,27 @@ public class LinkedListUtils {
         return head;
     }
 
+    public static Node deleteKthElementOfLL(Node head, int index) {
+        if(head == null) return null;
+        if(index==1) {
+            head=head.next;
+            return head;
+        }
+        Node temp = head;
+        Node prev = null;
+        int ctr=0;
+        while (temp !=null) {
+            ctr++;
+            if(ctr == index) {
+                prev.next = prev.next.next;
+                break;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return head;
+    }
+
     public static void printLL(Node head){
         Node current = head;
         while (current!=null)
