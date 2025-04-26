@@ -29,9 +29,15 @@ public class LinkedListDriver {
 //        LinkedListUtils.printLL(head);
 
         // remove Element
-        int removeElement = 3;
-        head = LinkedListUtils.deleteElementOfLL(head,removeElement);
-        System.out.println("Printing the LL after removing Element "+removeElement+":");
+//        int removeElement = 3;
+//        head = LinkedListUtils.deleteElementOfLL(head,removeElement);
+//        System.out.println("Printing the LL after removing Element "+removeElement+":");
+//        LinkedListUtils.printLL(head);
+
+        // insert head
+        int addElement = 10;
+        head = LinkedListUtils.insertHead(head,addElement);
+        System.out.println("Printing the LL after adding head "+addElement+":");
         LinkedListUtils.printLL(head);
 
     }

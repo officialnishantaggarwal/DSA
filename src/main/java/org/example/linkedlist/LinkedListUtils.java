@@ -24,6 +24,12 @@ public class LinkedListUtils {
         return head;
     }
 
+    public static Node insertHead(Node head, int element) {
+        Node temp = new Node(element);
+        temp.next=head;
+        return temp;
+    }
+
     public static Node removesTail(Node head) {
         if(head == null || head.next==null) return null;
         Node temp = head;
