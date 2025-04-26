@@ -30,6 +30,20 @@ public class LinkedListUtils {
         return temp;
     }
 
+    public static Node insertTail(Node head, int element) {
+        if(head == null)
+            return new Node(element);
+        Node temp = head;
+        while (temp.next!=null) {
+            temp = temp.next;
+        }
+
+        Node newNode = new Node(element);
+        temp.next = newNode;
+
+        return head;
+    }
+
     public static Node removesTail(Node head) {
         if(head == null || head.next==null) return null;
         Node temp = head;
