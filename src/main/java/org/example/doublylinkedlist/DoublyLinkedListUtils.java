@@ -70,6 +70,21 @@ public class DoublyLinkedListUtils {
         return head;
     }
 
+    public static void deleteGivenNode(Node temp){
+        Node prev = temp.back;
+        Node front = temp.next;
+
+        if(front==null) {
+            prev.next=null;
+            temp.back=null;
+            return;
+        }
+
+        prev.next=front;
+        front.back=prev;
+        temp.next=temp.back=null;
+    }
+
     public static void printDLL(Node head){
         Node current = head;
         while (current!=null)
