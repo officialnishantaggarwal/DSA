@@ -9,4 +9,10 @@ public class Node {
         this.data=data;
         this.next=null;
     }
+
+    Node(int data, Node next)
+    {
+        this.data=data;
+        this.next=next;
+    }
 }

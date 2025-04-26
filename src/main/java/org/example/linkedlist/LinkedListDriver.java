@@ -35,10 +35,13 @@ public class LinkedListDriver {
 //        LinkedListUtils.printLL(head);
 
         // insert head, tail
-        int addElement = 10;
-        head = LinkedListUtils.insertTail(head,addElement);
-        System.out.println("Printing the LL after adding head "+addElement+":");
-        LinkedListUtils.printLL(head);
+//        int addElement = 10;
+//        head = LinkedListUtils.insertTail(head,addElement);
+//        head = LinkedListUtils.insertHead(head,addElement);
+//        System.out.println("Printing the LL after adding head "+addElement+":");
+//        LinkedListUtils.printLL(head);
 
+        head = LinkedListUtils.insertBeforeValue(head,6,10);
+        LinkedListUtils.printLL(head);
     }
 }

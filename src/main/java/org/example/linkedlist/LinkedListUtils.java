@@ -75,6 +75,67 @@ public class LinkedListUtils {
         return head;
     }
 
+    public static Node insertKthElementOfLL(Node head, int index, int element) {
+        if(head == null){
+            if(index == 1){
+                return new Node(element);
+            }
+            else{
+                return head;
+            }
+        }
+
+        if(index == 1)
+        {
+            Node newNode = new Node(element);
+            newNode.next = head;
+            return newNode;
+        }
+
+        Node temp = head;
+        int ctr=0;
+        while (temp != null){
+            ctr++;
+            if(ctr == index -1)
+            {
+                Node newNode = new Node(element);
+                newNode.next = temp.next;
+                temp.next = newNode;
+                break;
+            }
+            temp = temp.next;
+        }
+
+        return head;
+    }
+
+    public static Node insertBeforeValue(Node head, int value, int element) {
+        if(head == null){
+            return null;
+        }
+
+        if(head.data == value)
+        {
+            Node newNode = new Node(element);
+            newNode.next = head;
+            return newNode;
+        }
+
+        Node temp = head;
+        while (temp.next != null){
+            if(temp.next.data == value)
+            {
+                Node newNode = new Node(element);
+                newNode.next = temp.next;
+                temp.next = newNode;
+                break;
+            }
+            temp = temp.next;
+        }
+
+        return head;
+    }
+
     public static Node deleteElementOfLL(Node head, int element) {
         if(head == null) return null;
         if(head.data==element) {
