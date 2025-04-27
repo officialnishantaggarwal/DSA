@@ -9,7 +9,7 @@ public class DoublyLinkedListDriver {
         Node head = DoublyLinkedListUtils.convertArrayToDLL(arr);
         System.out.println("Printing the DLL:");
         DoublyLinkedListUtils.printDLL(head);
-        DoublyLinkedListUtils.deleteGivenNode(head.next.next.next.next);
+        head = DoublyLinkedListUtils.insertBeforeHead(head,10);
         System.out.println("Printing the DLL:");
         DoublyLinkedListUtils.printDLL(head);
 

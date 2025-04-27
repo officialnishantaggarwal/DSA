@@ -85,6 +85,12 @@ public class DoublyLinkedListUtils {
         temp.next=temp.back=null;
     }
 
+    public static Node insertBeforeHead(Node head, int val){
+        Node newHead = new Node(val,head,null);
+        head.back=newHead;
+        return newHead;
+    }
+
     public static void printDLL(Node head){
         Node current = head;
         while (current!=null)
