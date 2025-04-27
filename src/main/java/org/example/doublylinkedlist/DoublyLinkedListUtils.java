@@ -91,6 +91,27 @@ public class DoublyLinkedListUtils {
         return newHead;
     }
 
+    public static Node insertBeforeTail(Node head, int val){
+
+        if(head.next==null) {
+            return insertBeforeHead(head,val);
+        }
+
+        Node tail = head;
+        Node prev;
+        while (tail.next!=null){
+            tail=tail.next;
+        }
+
+        prev = tail.back;
+
+        Node newNode = new Node(val,tail,prev);
+        tail.back=newNode;
+        prev.next=newNode;
+
+        return head;
+    }
+
     public static void printDLL(Node head){
         Node current = head;
         while (current!=null)
